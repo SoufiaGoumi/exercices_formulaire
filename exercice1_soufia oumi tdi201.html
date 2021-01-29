@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercice 1</title>
+    <style>
+        #d1{
+            background-color: darkgoldenrod;
+            display: inline;
+            width: 25%;
+        }
+        body{
+            background-color: darkgray;
+        }
+    </style>
+    <script>
+        function a(){
+          var sp=document.getElementById("sp");
+          var d1=document.getElementById("d1");
+          var x=sp.selectedIndex;
+          var y=sp.options[x].text;
+          if(x==0)
+          {
+              d1.innerHTML="veillez choisir un pays!!";
+          }
+          else{
+              d1.innerHTML="pays: "+y;
+          }
+        }
+        function b(){
+           for(var i=1;i<=sp.options.length-1;i++)
+           {
+               var gg=sp.options[i].text;
+               d1.innerHTML+=gg+"<br/>";
+           } 
+        }
+        function c()
+        {
+            // var o=new Option("california");
+            // sp.options[sp.length]=o;
+            var t1=document.getElementById("t1").value;
+            var o=new Option(t1);
+            sp.options[sp.length]=o;
+        }
+    </script>
+</head>
+<body>
+    <h2>******************************************************************</h2>
+    Pays:
+    <select id="sp">
+        <option value="0">selectionner..</option>
+        <option value="1">Maroc</option>
+        <option value="2">France</option>
+        <option value="3">Algerie</option>
+        <option value="4">Egypt</option>
+        <option value="5">Japan</option>
+        <option value="6">Tailland</option>
+        <option value="7">indounissia</option>
+        <option value="8">serie</option>
+        <option value="9">palastene</option>
+        <option value="10">mouritanie</option>
+        <option value="11">irak</option>
+    </select>
+    <input type="button" value="click" onclick="a();"/>
+    <input type="button" value="aficher tout" onclick="b();"/>
+    <input type="text" size="5" id="t1"/><input type="button" value="ajouter" onclick="c();"/>
+    <br/><br/>
+    resultat:<br/><div id="d1"></div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercice 2</title>
+    <style>
+        #d1{
+            background-color:cornsilk;
+            width: 25%;
+            color:crimson
+        }
+        body {
+            background-color:cadetblue;
+        }
+    </style>
+    <script>
+        function Valider()
+        {
+            var text1=document.getElementById("text1").value;
+            var d1=document.getElementById("d1");
+            var sp=document.getElementById("sp"); 
+            var x=new RegExp("^[a-z]*$","gi");
+            if(text1=="")
+            {
+                d1.innerText="il faut remplir votre nom!!";
+                return;
+            }
+            if(x.test(text1)==false)
+            {
+                d1.innerText="il ne faut pas utiliser des chiffres ou des caracteres speciaux !!"; 
+                return;
+            } 
+            var a=sp.selectedIndex;
+            var b=sp.options[a].text;
+            if(a==0)
+            {
+                d1.innerText="il faut choisir un pays!!";
+            }
+            else{
+                d1.innerHTML="Bonjour "+text1+" de "+b;
+            } 
+        }
+    </script>
+</head>
+<body>
+    <h1>--------------------------------------------------</h1>
+    Votre nom:<input type="text" size="10" id="text1"/><br/>
+    Votre pays:
+    <select id="sp">
+        <option value="0">selectionner..</option>
+        <option value="1">Maroc</option>
+        <option value="2">France</option>
+        <option value="3">Algerie</option>
+        <option value="4">Egypt</option>
+        <option value="5">Japan</option>
+        <option value="6">Tailland</option>
+        <option value="7">indounissia</option>
+        <option value="8">serie</option>
+        <option value="9">palastene</option>
+        <option value="10">mouritanie</option>
+        <option value="11">irak</option>
+    </select><br/><br/>
+   <input type="button" value="Valider" onclick="Valider();"/><br/><br/>
+    <div id="d1"></div>
+</body>
+</html>

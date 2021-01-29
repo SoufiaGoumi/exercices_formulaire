@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Exercice 3</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        #sv1{
+            display: none;
+        }
+        #sv2{
+            display: none;
+        }
+        #sv3{
+            display: none;
+        }
+        #sv4{
+            display: none;
+        }
+        #sv5{
+            display: none;
+        }
+    </style>
+    <script>
+        function Villes ()
+        { 
+            var sp=document.getElementById("sp");
+            var sv1=document.getElementById("sv1");
+            var sv2=document.getElementById("sv2");
+            var sv3=document.getElementById("sv3");
+            var sv4=document.getElementById("sv4");
+            var sv5=document.getElementById("sv5");
+            var d1=document.getElementById("d1");
+            if(sp.value=="1")
+            {
+                sv1.style.display="block";
+                return;
+            }
+            if(sp.value=="2")
+            {
+                sv2.style.display="block";
+                return;
+            }
+            if(sp.value=="3")
+            {
+                sv3.style.display="block";
+                return;
+            }
+            if(sp.value=="4")
+            {
+                sv4.style.display="block";
+                return;
+            }
+            if(sp.value=="5")
+            {
+                sv5.style.display="block";
+                return;
+            }
+        }
+        function Valider()
+        {
+            var i=sp.selectedIndex;
+            var i1=sv1.selectedIndex;
+            var i2=sv2.selectedIndex;
+            var i3=sv3.selectedIndex;
+            var i4=sv4.selectedIndex;
+            var i5=sv5.selectedIndex;
+            if(i==0)
+            {
+                d1.innerText="veuillez choisir un pays!";
+            }
+            else if(i==1)
+            {
+                if(i1==0)
+                {
+                    d1.innerText="veuillez choisir une ville!";
+                }
+                else{
+                    d1.innerHTML="pays:"+sp.options[i].text+", ville:"+sv1.options[i1].text;
+                    sv1.style.display="none";
+                }
+                return;
+            }
+            else if(i==2)
+            {
+                if(i2==0)
+                {
+                    d1.innerText="veuillez choisir une ville!";
+                }
+                else{
+                    d1.innerHTML="pays:"+sp.options[i].text+", ville:"+sv2.options[i2].text;
+                    sv2.style.display="none";
+                }
+                return;
+            }
+            else if(i==3)
+            {
+                if(i3==0)
+                {
+                    d1.innerText="veuillez choisir une ville!";
+                }
+                else{
+                    d1.innerHTML="pays:"+sp.options[i].text+", ville:"+sv3.options[i3].text;
+                    sv3.style.display="none";
+                }
+                return;
+            }
+            else if(i==4)
+            {
+                if(i4==0)
+                {
+                    d1.innerText="veuillez choisir une ville!";
+                }
+                else{
+                    d1.innerHTML="pays:"+sp.options[i].text+", ville:"+sv4.options[i4].text;
+                    sv4.style.display="none";
+                }
+                return;
+            }
+            else if(i==5)
+            {
+                if(i5==0)
+                {
+                    d1.innerText="veuillez choisir une ville!";
+                }
+                else{
+                    d1.innerHTML="pays:"+sp.options[i].text+", ville:"+sv5.options[i5].text;
+                    sv5.style.display="none";
+                }
+                return;
+            }
+        }
+    </script>
+</head>
+<body>
+    <label>Pays:</label>
+           <select id="sp" onchange="Villes();">
+                <option value="0">selectionner..</option>
+                <option value="1">Maroc</option>
+                <option value="2">Tunisie</option>
+                <option value="3">Algerie</option>
+                <option value="4">Egypt</option>
+                <option value="5">irak</option>
+            </select>
+            <br/><br/>
+    <label>Villes:</label>
+    <select id="sv1">
+     <option value="m0">Selectionner..</option>
+     <option value="m1">CasaBlanca</option>
+     <option value="m2">Beni Mellal</option>
+     <option value="m3">Rabat</option>
+     <option value="m4">Sale</option>
+     <option value="m5">Tanger</option>
+     <option value="m6">Taza</option>
+     <option value="m7">Ourzazat</option>
+     <option value="m8">Kheribka</option>
+     <option value="m9">Chefchaoun</option>
+     <option value="m10">Titouan</option>
+     <option value="m11">Marrakech</option>
+     <option value="m12">Fes</option>
+    </select>
+    <select id="sv2" >
+     <option value="t0">Selectionner..</option>
+     <option value="t1">Tunisie</option>
+     <option value="t2">Kairouan</option>
+     <option value="t3">Bizerte</option>
+     <option value="t4">La Soukra</option>
+     <option value="t5">Ariana</option>
+     <option value="t6">Gafsa</option>
+     <option value="t7">Raoued</option>
+     <option value="t8">Monastir</option>
+     <option value="t9">La Marsa</option>
+     <option value="t10">Ben Arous</option>
+     <option value="t11">Kasserine</option>
+     <option value="t12">lgouira</option>
+     </select>
+     <select id="sv3">
+         <option value="a0">Selectionner..</option>
+         <option value="a1">Annaba</option>
+         <option value="a2">Blida</option>
+         <option value="a3">Batna</option>
+         <option value="a4">Djelfa</option>
+         <option value="a5">Sétif</option>
+         <option value="a6">Sidi bel Abbès</option>
+         <option value="a7">Biskra</option>
+         <option value="a8">Tébessa</option>
+         <option value="a9">El Oued</option>
+         <option value="a10">Skikda</option>
+         <option value="a11">Tiaret</option>
+         <option value="a12">Béjaïa</option>
+     </select>
+     <select id="sv4">
+        <option value="e0">Selectionner..</option>
+        <option value="e1">Alexandrie</option>
+        <option value="e2">Gizeh</option>
+        <option value="e3">Shubra El-Kheima</option>
+        <option value="e4">Port-Saïd</option>
+        <option value="e5">Suez</option>
+        <option value="e6">Louxor</option>
+        <option value="e7">Mansourah</option>
+        <option value="e8">Tanta</option>
+        <option value="e9">Assiout</option>
+        <option value="e10">Ismaïlia</option>
+        <option value="e11">Zagazig</option>
+        <option value="e12">Assouan</option>
+    </select>
+    <select id="sv5">
+        <option value="i0">Selectionner..</option>
+        <option value="i1">Bassorah</option>
+        <option value="i2">Mossoul</option>
+        <option value="i3">Kirkuk</option>
+        <option value="i4">Arbil</option>
+        <option value="i5">Nadjaf</option>
+        <option value="i6">Kerbela</option>
+        <option value="i7">Nassiriya</option>
+        <option value="i8">Amara</option>
+        <option value="i9">Diwaniya</option>
+        <option value="i10">Kut</option>
+        <option value="i11">Hilla</option>
+        <option value="i12">Ramadi</option>
+    </select>
+    <br/><br/>
+   <button onclick="Valider();" style="background-color: bisque;">valider</button> <br/><br/>
+    <div id="d1" style="background-color: green;"></div>
+</body>
+</html>
