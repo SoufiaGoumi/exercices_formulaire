@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulaire d'inscription</title>
+    <style>
+        div{
+            background-color: red;
+        }
+    </style>
+    <script>
+        function valider(){
+         var div=document.getElementById("div");
+         var select1=document.getElementById("select1");
+         var select2=document.getElementById("select2");
+         var t1=document.getElementById("t1").value;
+         var t2=document.getElementById("t2").value;
+         var t3=document.getElementById("t3").value;
+         if(t1=="")
+         {
+             div.innerText="Veuillez remplir votre nom!";
+             return false;
+         }
+         if(t2=="")
+         {
+             div.innerText="Veuillez remplir votre prenom!";
+             return false;
+         }
+         if(t3=="")
+         {
+             div.innerText="Veillez remplir votre Email";
+             return false;
+         }
+         if(select1.selectedIndex==0)
+         {
+          div.innerText="Veuillez choisir un pays!";
+          return false;
+         }
+        }
+    </script>
+</head>
+<body>
+    <fieldset style="width: 50%;">
+        <legend>Formulaire d'inscription</legend>
+         <form  action="form_inscrp2.html" method="GET" onsubmit="return valider();"> 
+           Nom<input type="text" id="t1" placeholder="saisir votre nom"><br/><br/>
+           Prenom <input type="text" id="t2" placeholder="saisir votre prenom"><br/><br/>
+           Email <input type="email"  id="t3" placeholder="saisir votre Email"><br/><br/>
+           Sexe <input type="radio" name="gr1">Masculin <input type="radio" name="gr1">Feminin<br/><br/>
+           Photo<input type="button" value="Choisissez un fichier">Aucun fichier choisi<br/><br/>
+           Pays<select id="select1">
+            <option value="0">selectionner..</option>
+            <option value="1">Maroc</option>
+            <option value="2">France</option>
+            <option value="3">Algerie</option>
+            <option value="4">Egypt</option>
+            <option value="5">Japan</option>
+            <option value="6">Tailland</option>
+            <option value="7">indounissia</option>
+            <option value="8">serie</option>
+            <option value="9">palastene</option>
+            <option value="10">mouritanie</option>
+            <option value="11">irak</option>
+           </select><br/><br/>
+           Les langages preferes<select multiple id="select2">
+            <option value="l0">JavaScript</option>
+            <option value="l1">PHP</option>
+            <option value="l2">Csharp</option>
+            <option value="l3">C++</option>
+            <option value="l4">Python</option>
+           </select>(Pour faire plusieurs choix maintenir la touche CTRL enfoncee)<br/><br/>
+           Domaine d'activite<input type="checkbox">Informatique<input type="checkbox"> Gestion<input type="checkbox">Pedagogie<br/><br/>
+            <input type="submit" value="Envoyer" onclick="valider();">    <input type="reset" value="Annuler">
+           <br/><br/>
+            <div id="div"></div>
+         </form>
+    </fieldset>
+</body>
+</html>
